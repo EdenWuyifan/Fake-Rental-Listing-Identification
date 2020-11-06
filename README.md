@@ -12,10 +12,18 @@ Hence we are going to make a solution with systematic, unbiased machine learning
 
 ## Our Plan
 Our project is going to have 3 steps: Firstly, collect as much datas as possible, since a larger dataset can give us more systematical prediction. The datas are collected from rental webpages by web crawlers. We’ve already made some gradual progresses crawling from Ziroom, Beike, 58.com, Anjuke, and get a 20k dataset. Then we are going to add true/false tags to some of them.  
+  
 The next step is going to be modeling, we’ve already implement linear regression and batch gradient descent to our simple model which predict reasonable rental price using floor, area, and numbers of rooms. We will try to implement more complex methods in the future such as Polynomial Regression and Neuron Network. We’ll also use Naive Bayes for fitting different tags into prediction model.  
+  
 Accompanied with modeling is training model with our datasets. Since our model and datasets will be updated constantly with training outputs, those three step will cycling simultaneously. Hopefully, after several loops, we will have a steady prediction model which output a percentile of how likely a rental information is fake.  
-
+  
 ## Progresses
 * Using xpath and BeautifulSoup, we are able to get a 20k dataset with different infos.
 * Since some rental webpages using encryption methods to protect their price and other important infos, we also managed to cross that obstacle using decipher methods.
-* In order to make the data coming handily, we standardized them with standard format and datatypes.
+* In order to make the data coming handily, we standardized them with standard format and datatypes.  
+  
+## Dificulties
+* One problem we faced when crawling for Ziroom dataset is that the price is directly crop out of one randomly generated picture. So we used BeautifulSoup to get that image from web sources. Then we use Tesseract to recognize the number orders.  
+![alt text](https://github.com/EdenWuyifan/Fake-Rental-Listing-Identification/blob/main/image.jpg?raw=true)
+* Anjuke and 58 encrypted the numbers as some Chinese characters. We get its real-time key in its js fangchan-secret function, then refer it to the glyph dictionary to find the number with same suffix, we can substitute the Chinese character with the proper number.  
+
