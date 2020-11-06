@@ -3,8 +3,11 @@ This is the repository for Fake Housing Rental Info Identification(FRLI 假房�
 
 ## Proposal
 Nowadays, when many people choose to rent houses, most of them will first search through the Internet. They prefer to select their desired houses through online pictures first, and then inspect real houses / to save efforts. In China, the top online housing platforms are 58, Anjuke, ziroom and Beike(贝壳). Most of the listing information is equipped with pictures of the houses and other basics. Online housing rental seem to bring huge convenience to people’s life, while problems such as online fake renting are common.  
+  
 Widely reported by official China media such as People’s Daily, ChinaNews, CTV News, online rental scams are so common / that around 80% of the people encountered fake houses when renting. They lost huge amouts of money because landlords conceal major defects in housing and the prices are opaque. As indicated by south China news survey, major problems are excessively beautified pictures, faking detailed information of houses as well as attracting people with false low price.  
+  
 Currently, there’s no existing solutions to this problem. Chinese government has issued plans on regulation policies and provided some suggestions on distinguishing fake houses. Comparing the average prices of identical houses and paying attention to textual descriptions are two solutions. While these methods takes huge work and are usually biased with subjective illustrations on information.  
+  
 Hence we are going to make a solution with systematic, unbiased machine learning methods, and trying to give the tenants an intuitive judgement of the reliability of rental sources.  
 
 ## Our Plan
@@ -13,6 +16,6 @@ The next step is going to be modeling, we’ve already implement linear regressi
 Accompanied with modeling is training model with our datasets. Since our model and datasets will be updated constantly with training outputs, those three step will cycling simultaneously. Hopefully, after several loops, we will have a steady prediction model which output a percentile of how likely a rental information is fake.  
 
 ## Progresses
-*Using xpath and BeautifulSoup, we are able to get a 20k dataset with different infos.
-*Since some rental webpages using encryption methods to protect their price and other important infos, we also managed to cross that obstacle using decipher methods.
-*In order to make the data coming handily, we standardized them with standard format and datatypes.
+* Using xpath and BeautifulSoup, we are able to get a 20k dataset with different infos.
+* Since some rental webpages using encryption methods to protect their price and other important infos, we also managed to cross that obstacle using decipher methods.
+* In order to make the data coming handily, we standardized them with standard format and datatypes.
