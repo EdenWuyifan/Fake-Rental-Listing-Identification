@@ -21,6 +21,9 @@ Accompanied with modeling is training model with our datasets. Since our model a
 * Using xpath and BeautifulSoup, we are able to get a 20k dataset with different infos.
 * Since some rental webpages using encryption methods to protect their price and other important infos, we also managed to cross that obstacle using decipher methods.
 * In order to make the data coming handily, we standardized them with standard format and datatypes.  
+* Trained a simple model using Linear Regression to predicting the housing price using bedroom, livingroom, area, and floor. This is based on Linear Regression and get a quite good result after training. We believe we can prove it with more complex methodology and datas. Here's what we got:  
+![alt text](https://github.com/EdenWuyifan/Fake-Rental-Listing-Identification/blob/main/pics/problem3.png?raw=true)
+
   
 ## Dificulties
 * One problem we faced when crawling for Ziroom dataset is that the price is directly crop out of one randomly generated picture. So we used BeautifulSoup to get that image from web sources. Then we use Tesseract to recognize the number orders.  
