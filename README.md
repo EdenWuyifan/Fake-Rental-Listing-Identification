@@ -24,6 +24,6 @@ Accompanied with modeling is training model with our datasets. Since our model a
   
 ## Dificulties
 * One problem we faced when crawling for Ziroom dataset is that the price is directly crop out of one randomly generated picture. So we used BeautifulSoup to get that image from web sources. Then we use Tesseract to recognize the number orders.  
-![alt text](https://github.com/EdenWuyifan/Fake-Rental-Listing-Identification/blob/main/image.jpg?raw=true)
+![alt text](https://github.com/EdenWuyifan/Fake-Rental-Listing-Identification/pics/problem1.png?raw=true)
 * Anjuke and 58 encrypted the numbers as some Chinese characters. We get its real-time key in its js fangchan-secret function, then refer it to the glyph dictionary to find the number with same suffix, we can substitute the Chinese character with the proper number.  
 
