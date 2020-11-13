@@ -1,11 +1,15 @@
 import xlwt
 from lxml import etree
 import requests
-import time,random
+import time
+import random
 
-import re,io
-import time,base64
+import re
+import io
+import time
+import base64
 from fontTools.ttLib import TTFont
+
 
 def base64_decode(page_content):
     """
@@ -24,6 +28,7 @@ def base64_decode(page_content):
     for k, v in keys.items():
         page_content = page_content.replace(f'&#x{k};', v)
     return page_content
+
 
 all_info_list = []
 
@@ -50,16 +55,18 @@ def get_info(url):
         biaoqians = info.xpath('div[1]/p[2]/span')
         t = ''
         for biaoqian in biaoqians:
-            t+=(biaoqian.xpath('text()')[0])
+            t += (biaoqian.xpath('text()')[0])
         dizhi1 = info.xpath('div[1]/address/text()')
-        info_list = [title, yangshi, mianji, niandai, dizhi, danjia, zongjia, t, dizhi1]
+        info_list = [title, yangshi, mianji, niandai,
+                     dizhi, danjia, zongjia, t, dizhi1]
         all_info_list.append(info_list)
 
     time.sleep(1)
 
 
 if __name__ == '__main__':
-    urls = ['https://sh.zu.anjuke.com/p{}'.format(str(i)) for i in range(1,51)]
+    urls = [
+        'https://sh.zu.anjuke.com/fangyuan/px2-x1-p{}'.format(str(i)) for i in range(1, 51)]
     for url in urls:
         get_info(url)
 
@@ -80,4 +87,4 @@ if __name__ == '__main__':
             j += 1
         i += 1
 
-    book.save('hangzhouershoufang.xls')
+    book.save('anjuke_fake2.xls')
