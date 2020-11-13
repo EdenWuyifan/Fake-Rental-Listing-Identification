@@ -86,7 +86,7 @@ def get_info(soup,positions,all_info_list):
 
 
 if __name__ == '__main__':
-    header = ['序号', '标题', '室', '厅', '平米', '楼层', '地址', '价格', '标签']
+    header = ['标题', '室', '厅', '面积', '楼层', '地址', '价格', '标签']
     book = xlwt.Workbook(encoding='utf-8')
     sheet = book.add_sheet('Sheet1')
     for h in range(len(header)):
@@ -109,13 +109,12 @@ if __name__ == '__main__':
     
     
         for list in all_info_list:  # 行数据
-            j = 1  # 列
-            sheet.write(i, 0, k)
+            j = 0  # 列
             k += 1
             for data in list:  # 列数据
                 sheet.write(i, j, data)
                 j += 1
             i += 1
 
-    book.save('ziroom.xls')
+    book.save('../datasets/ziroom.xls')
     print(i,k)
