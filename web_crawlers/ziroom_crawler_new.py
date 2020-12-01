@@ -21,7 +21,7 @@ def get_image_number(soup):
     positions = {"0":None,"21.4":None,"42.8":None,"64.2":None,"85.6":None,"107":None,"128.4":None,"149.8":None,"171.2":None,"192.6":None}
     pos_keys = ["0","21.4","42.8","64.2","85.6","107","128.4","149.8","171.2","192.6"]
     
-    price=str(soup.findAll('span', 'num')[1])
+    price=str(soup.findAll('span', class_='num')[1])
     print(price)
     startStr='background-image:'
     endStr='.png'
